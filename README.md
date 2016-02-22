@@ -1,3 +1,4 @@
+This is only for test, the real gem is [Galerts](https://github.com/pivotus/galerts/)
 #   Galerts
 
 [![Gem Version](https://badge.fury.io/rb/galerts.png)][gem]
