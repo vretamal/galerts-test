@@ -11,7 +11,49 @@ module Galerts
 
     def init_agent
       @agent = Mechanize.new
-      @agent.user_agent_alias = 'Mac Safari'
+      case rand(20)
+      when 1
+        @agent.user_agent_alias = 'Linux Firefox'
+      when 2
+        @agent.user_agent_alias = 'Linux Konqueror'
+      when 3
+        @agent.user_agent_alias = 'Linux Mozilla'
+      when 4
+        @agent.user_agent_alias = 'Mac Firefox'
+      when 5
+        @agent.user_agent_alias = 'Mac Mozilla'
+      when 6
+        @agent.user_agent_alias = 'Mac Safari 4'
+      when 7
+        @agent.user_agent_alias = 'Mac Safari'
+      when 8
+        @agent.user_agent_alias = 'Windows Chrome'
+      when 9
+        @agent.user_agent_alias = 'Windows IE 6'
+      when 10
+        @agent.user_agent_alias = 'Windows IE 7'
+      when 11
+        @agent.user_agent_alias = 'Windows IE 8'
+      when 12
+        @agent.user_agent_alias = 'Windows IE 9'
+      when 13
+        @agent.user_agent_alias = 'Windows IE 10'
+      when 14
+        @agent.user_agent_alias = 'Windows IE 11'
+      when 15
+        @agent.user_agent_alias = 'Windows Edge'
+      when 16
+        @agent.user_agent_alias = 'Windows Mozilla'
+      when 17
+        @agent.user_agent_alias = 'Windows Firefox'
+      when 18
+        @agent.user_agent_alias = 'iPhone'
+      when 19
+        @agent.user_agent_alias = 'iPad'
+      when 20
+        @agent.user_agent_alias = 'Android'
+      end
+
       @agent.keep_alive = true
       @agent.redirect_ok = true
       @agent.follow_meta_refresh = true
@@ -69,7 +111,7 @@ module Galerts
             sources:      SOURCES_TYPES.invert[alert[2][4]],
             how_many:     HOW_MANY_TYPES.invert[alert[2][5]],
             delivery:     DELIVERY_TYPES.invert[alert[2][6][0][1]]
-          })
+            })
         end
       end
       result
